@@ -46,7 +46,7 @@
                         @csrf
                         <div class="update-form__item">
                             <input class="update-form__item-input" type="text" name="content" value="{{ $category['name'] }}">
-                            <input type="hidden" name="id" value="">
+                            <input type="hidden" name="id" value="{{ $category['id'] }}">
                         </div>
                         <div class="update-form__button">
                             <button class="update-form__button-submit" type="submit">更新</button>
@@ -59,7 +59,7 @@
                         @csrf
                         <div class="delete-form__button">
                             <button class="delete-form__button-submit" type="submit">削除</button>
-                            <input type="hidden" name="id" value="">
+                            <input type="hidden" name="id" value="{{ $category['id'] }}">
                         </div>
                     </form>
                 </td>
