@@ -23,10 +23,10 @@
 </div>
 
 <div class="category__content">
-    <form action="/categorys" method="post" class="category-form">
+    <form action="/categories" method="post" class="category-form">
         @csrf
         <div class="category-form__item">
-            <input class="category-form__item-input" type="text" name="content" value="{{ old('content') }}" />
+            <input class="category-form__item-input" type="text" name="name" value="{{ $category['name'] }}" />
         </div>
         <div class="category-form__button">
             <button class="category-form__button-submit" type="submit">作成</button>
@@ -44,7 +44,7 @@
             </tr>
             <tr class="category-table__row">
                 <td class="category-table__item">
-                    <form action="/categorys/update" method="POST" class="update-form">
+                    <form action="/categories/update" method="POST" class="update-form">
                         @method('PATCH')
                         @csrf
                         <div class="update-form__item">
@@ -57,7 +57,7 @@
                     </form>
                 </td>
                 <td class="category-table__item">
-                    <form action="/categorys/delete" method="POST" class="delete-form">
+                    <form action="/categories/delete" method="POST" class="delete-form">
                         @method('PATCH')
                         @csrf
                         <div class="delete-form__button">
@@ -69,7 +69,7 @@
             </tr>
             <tr class="category-table__row">
                 <td class="category-table__item">
-                    <form action="/categorys/update" method="POST" class="update-form">
+                    <form action="/categories/update" method="POST" class="update-form">
                         @method('PATCH')
                         @csrf
                         <div class="update-form__item">
@@ -82,7 +82,7 @@
                     </form>
                 </td>
                 <td class="category-table__item">
-                    <form action="/categorys/delete" method="POST" class="delete-form">
+                    <form action="/categories/delete" method="POST" class="delete-form">
                         @method('PATCH')
                         @csrf
                         <div class="delete-form__button">
