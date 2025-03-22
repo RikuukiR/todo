@@ -37,9 +37,6 @@
         <div class="create-form__button">
             <button class="create-form__button-submit" type="submit">作成</button>
         </div>
-        <div class="create-form__error">
-            <!--バリデーション機能を実装したら記述-->
-        </div>
     </form>
     <div class="section__title">
         <h2>Todo検索</h2>
@@ -54,12 +51,9 @@
         <div class="search-form__button">
             <button class="search-form__button-submit" type="submit">検索</button>
         </div>
-        <div class="search-form__error">
-            <!--バリデーション機能を実装したら記述-->
-        </div>
     </form>
 
-    
+
     <div class="todo-table">
         <table class="todo-table__inner">
             <tr class="todo-table__row">

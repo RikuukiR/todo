@@ -26,13 +26,10 @@
     <form action="/categories" method="post" class="category-form">
         @csrf
         <div class="category-form__item">
-            <input class="category-form__item-input" type="text" name="name" value="{{ $category['name'] }}" />
+            <input class="category-form__item-input" type="text" name="name" value="{{ old('name') }}" />
         </div>
         <div class="category-form__button">
             <button class="category-form__button-submit" type="submit">作成</button>
-        </div>
-        <div class="category-form__error">
-            <!--バリデーション機能を実装したら記述-->
         </div>
     </form>
 
@@ -48,7 +45,7 @@
                         @method('PATCH')
                         @csrf
                         <div class="update-form__item">
-                            <input class="update-form__item-input" type="text" name="content" value="category1">
+                            <input class="update-form__item-input" type="text" name="content" value="{{ $category['name'] }}">
                             <input type="hidden" name="id" value="">
                         </div>
                         <div class="update-form__button">
