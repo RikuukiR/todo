@@ -82,7 +82,7 @@
                 </td>
                 <td class="todo-table__item">
                     <form action="/todos/delete" method="POST" class="delete-form">
-                        @method('PATCH')
+                        @method('DELETE')
                         @csrf
                         <div class="delete-form__button">
                             <button class="delete-form__button-submit" type="submit">削除</button>

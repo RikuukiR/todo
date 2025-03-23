@@ -27,7 +27,7 @@
     width: 70%;
 }
 
-.category-form {
+.create-form {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -36,12 +36,12 @@
     text-align: center;
 }
 
-.category-form__item {
+.create-form__item {
     display: flex;
     width: 70%;
 }
 
-.category-form__item-input {
+.create-form__item-input {
     margin-right: 10px;
     padding: 10px;
     width: 100%;
@@ -50,7 +50,7 @@
     border-radius: 3px;
 }
 
-.category-form__item-select {
+.create-form__item-select {
     padding: 10px;
     width: 30%;
     height: 40px;
@@ -59,11 +59,11 @@
     appearance: none;
 }
 
-.category-form__button {
+.create-form__button {
     width: 20%;
 }
 
-.category-form__button-submit {
+.create-form__button-submit {
     background: #000;
     color: #fff;
     padding: 10px;

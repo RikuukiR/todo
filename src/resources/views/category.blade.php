@@ -23,13 +23,13 @@
 </div>
 
 <div class="category__content">
-    <form action="/categories" method="post" class="category-form">
+    <form action="/categories" method="post" class="create-form">
         @csrf
-        <div class="category-form__item">
-            <input class="category-form__item-input" type="text" name="name" value="{{ old('name') }}" />
+        <div class="create-form__item">
+            <input class="create-form__item-input" type="text" name="name" value="{{ old('name') }}" />
         </div>
-        <div class="category-form__button">
-            <button class="category-form__button-submit" type="submit">作成</button>
+        <div class="create-form__button">
+            <button class="create-form__button-submit" type="submit">作成</button>
         </div>
     </form>
 
@@ -39,13 +39,14 @@
             <tr class="category-table__row">
                 <th class="category-table__header">category</th>
             </tr>
+            @foreach ($categories as $category)
             <tr class="category-table__row">
                 <td class="category-table__item">
                     <form action="/categories/update" method="POST" class="update-form">
                         @method('PATCH')
                         @csrf
                         <div class="update-form__item">
-                            <input class="update-form__item-input" type="text" name="content" value="{{ $category['name'] }}">
+                            <input class="update-form__item-input" type="text" name="name" value="{{ $category['name'] }}">
                             <input type="hidden" name="id" value="{{ $category['id'] }}">
                         </div>
                         <div class="update-form__button">
@@ -55,7 +56,7 @@
                 </td>
                 <td class="category-table__item">
                     <form action="/categories/delete" method="POST" class="delete-form">
-                        @method('PATCH')
+                        @method('DELETE')
                         @csrf
                         <div class="delete-form__button">
                             <button class="delete-form__button-submit" type="submit">削除</button>
@@ -64,32 +65,8 @@
                     </form>
                 </td>
             </tr>
-            <tr class="category-table__row">
-                <td class="category-table__item">
-                    <form action="/categories/update" method="POST" class="update-form">
-                        @method('PATCH')
-                        @csrf
-                        <div class="update-form__item">
-                            <input class="update-form__item-input" type="text" name="content" value="category2">
-                            <input type="hidden" name="id" value="">
-                        </div>
-                        <div class="update-form__button">
-                            <button class="update-form__button-submit" type="submit">更新</button>
-                        </div>
-                    </form>
-                </td>
-                <td class="category-table__item">
-                    <form action="/categories/delete" method="POST" class="delete-form">
-                        @method('PATCH')
-                        @csrf
-                        <div class="delete-form__button">
-                            <button class="delete-form__button-submit" type="submit">削除</button>
-                            <input type="hidden" name="id" value="">
-                        </div>
-                    </form>
-                </td>
-            </tr>
+            @endforeach
         </table>
     </div>
 </div>
-@endsection('content')
+@endsection
